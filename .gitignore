@@ -1,0 +1,42 @@
+# ===============================
+# GENERAL
+# ===============================
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# ===============================
+# DOCKER
+# ===============================
+docker-data/
+postgres_data/
+
+# ===============================
+# FRONTEND (React / Vite)
+# ===============================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===============================
+# BACKEND (Spring Boot / Maven)
+# ===============================
+backend/target/
+backend/*.log
+
+# Maven wrapper (OPTIONAL ignore if already committed)
+# backend/.mvn/wrapper/maven-wrapper.jar
+
+# ===============================
+# IDE FILES
+# ===============================
+.vscode/
+.idea/
+*.iml
+
+# ===============================
+# OS FILES
+# ===============================
+*.swp
+*.swo
