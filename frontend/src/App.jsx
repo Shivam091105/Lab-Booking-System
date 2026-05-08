@@ -11,7 +11,10 @@ import BookingDetailPage from './pages/BookingDetailPage'
 import ApprovalPanelPage from './pages/ApprovalPanelPage'
 import LabSchedulePage from './pages/LabSchedulePage'
 import AllBookingsPage from './pages/AllBookingsPage'
+<<<<<<< HEAD
 import OverrideEventsPage from './pages/OverrideEventsPage'
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()
@@ -37,7 +40,10 @@ function AppRoutes() {
         <Route path="approvals"        element={<ApprovalPanelPage />} />
         <Route path="schedule"         element={<LabSchedulePage />} />
         <Route path="all-bookings"     element={<AllBookingsPage />} />
+<<<<<<< HEAD
         <Route path="override-events"  element={<OverrideEventsPage />} />
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>

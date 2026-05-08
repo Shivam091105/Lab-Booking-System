@@ -106,6 +106,7 @@ public class BookingRequest {
         MULTI_LAB_EVENT
     }
 
+<<<<<<< HEAD
     /**
      * Reference to the OverrideEvent that cancelled this booking.
      * Null unless status = OVERRIDDEN.
@@ -114,12 +115,18 @@ public class BookingRequest {
     @JoinColumn(name = "overridden_by_event_id")
     private OverrideEvent overriddenByEvent;
 
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     public enum BookingStatus {
         PENDING,
         IN_REVIEW,
         APPROVED,
         REJECTED,
+<<<<<<< HEAD
         CANCELLED,
         OVERRIDDEN   // cancelled due to a mandatory override event
+=======
+        CANCELLED
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     }
 }

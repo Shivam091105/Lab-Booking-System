@@ -24,6 +24,7 @@ public class BookingController {
 
     private final BookingService bookingService;
 
+<<<<<<< HEAD
     /**
      * Submit a new booking request.
      * STUDENT, CLUB_MANAGER — for student/club bookings.
@@ -31,6 +32,11 @@ public class BookingController {
      */
     @PostMapping
     @PreAuthorize("hasAnyRole('STUDENT','CLUB_MANAGER','PROFESSOR','CLASS_COORDINATOR')")
+=======
+    /** Submit a new booking request (students & club managers) */
+    @PostMapping
+    @PreAuthorize("hasAnyRole('STUDENT','CLUB_MANAGER')")
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     public ResponseEntity<ApiResponse<BookingResponse>> submitBooking(
             @Valid @RequestBody BookingRequestDto dto,
             @AuthenticationPrincipal UserDetails userDetails) {
@@ -85,9 +91,15 @@ public class BookingController {
         return ResponseEntity.ok(ApiResponse.success(response, "Approval action recorded"));
     }
 
+<<<<<<< HEAD
     /** Cancel own booking — all roles that can create bookings */
     @PatchMapping("/{id}/cancel")
     @PreAuthorize("hasAnyRole('STUDENT','CLUB_MANAGER','PROFESSOR','CLASS_COORDINATOR')")
+=======
+    /** Cancel own booking */
+    @PatchMapping("/{id}/cancel")
+    @PreAuthorize("hasAnyRole('STUDENT','CLUB_MANAGER')")
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     public ResponseEntity<ApiResponse<BookingResponse>> cancelBooking(
             @PathVariable Long id,
             @AuthenticationPrincipal UserDetails userDetails) {

@@ -1,3 +1,48 @@
+<<<<<<< HEAD
 .env
 backend/target
 frontend/node_modules
+=======
+# ===============================
+# GENERAL
+# ===============================
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# ===============================
+# DOCKER
+# ===============================
+docker-data/
+postgres_data/
+
+# ===============================
+# FRONTEND (React / Vite)
+# ===============================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===============================
+# BACKEND (Spring Boot / Maven)
+# ===============================
+backend/target/
+backend/*.log
+
+# Maven wrapper (OPTIONAL ignore if already committed)
+# backend/.mvn/wrapper/maven-wrapper.jar
+
+# ===============================
+# IDE FILES
+# ===============================
+.vscode/
+.idea/
+*.iml
+
+# ===============================
+# OS FILES
+# ===============================
+*.swp
+*.swo
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe

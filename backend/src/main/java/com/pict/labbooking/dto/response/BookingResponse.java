@@ -30,8 +30,11 @@ public class BookingResponse {
     private String division;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+<<<<<<< HEAD
 
     // ── Override fields ────────────────────────────────────────────────────
     private Long overriddenByEventId;
     private String overriddenByEventTitle;
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 }

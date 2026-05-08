@@ -1,7 +1,10 @@
 package com.pict.labbooking.service.impl;
 
 import com.pict.labbooking.dto.response.LabResponse;
+<<<<<<< HEAD
 import com.pict.labbooking.dto.response.OverrideEventResponse;
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 import com.pict.labbooking.dto.response.TimetableSlotResponse;
 import com.pict.labbooking.entity.Lab;
 import com.pict.labbooking.exception.ResourceNotFoundException;
@@ -21,8 +24,12 @@ public class LabService {
 
     private final LabRepository labRepo;
     private final TimetableSlotRepository slotRepo;
+<<<<<<< HEAD
     private final OverrideEventRepository overrideRepo;
     private final BookingService bookingService;
+=======
+    private final BookingRequestRepository bookingRepo;
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     private final MapperUtil mapper;
 
     @Transactional(readOnly = true)
@@ -54,16 +61,22 @@ public class LabService {
     }
 
     /**
+<<<<<<< HEAD
      * Returns three lists for the given lab + date:
      *  [0] timetable slots for that day-of-week (with override flags)
      *  [1] all active bookings on that date (PENDING, IN_REVIEW, APPROVED, OVERRIDDEN)
      *  [2] active override events for that lab on that date
      *
      * The frontend uses these three lists to colour-code the calendar.
+=======
+     * Returns approved bookings for a lab on a specific date,
+     * combined with the weekly timetable for that day.
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
      */
     @Transactional(readOnly = true)
     public List<Object> getLabAvailability(Long labId, LocalDate date) {
         String dayOfWeek = date.getDayOfWeek().name();
+<<<<<<< HEAD
 
         var timetable = slotRepo.findByLabIdAndDayOfWeek(labId, dayOfWeek)
                 .stream().map(mapper::toTimetableSlotResponse).collect(Collectors.toList());
@@ -75,5 +88,12 @@ public class LabService {
                 .stream().map(mapper::toOverrideEventResponse).collect(Collectors.toList());
 
         return List.of(timetable, bookings, overrides);
+=======
+        var timetable = slotRepo.findByLabIdAndDayOfWeek(labId, dayOfWeek)
+                .stream().map(mapper::toTimetableSlotResponse).collect(Collectors.toList());
+        var bookings = bookingRepo.findApprovedBookingsForLabOnDate(labId, date)
+                .stream().map(mapper::toBookingResponse).collect(Collectors.toList());
+        return List.of(timetable, bookings);
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     }
 }

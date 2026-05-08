@@ -55,6 +55,7 @@ public class TimetableSlot {
     @Builder.Default
     private SlotType slotType = SlotType.REGULAR_CLASS;
 
+<<<<<<< HEAD
     /**
      * Set to true when an OverrideEvent affects this slot.
      * The slot remains in DB but is displayed as blocked.
@@ -70,6 +71,8 @@ public class TimetableSlot {
     @JoinColumn(name = "overridden_by_event_id")
     private OverrideEvent overriddenByEvent;
 
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     public enum SlotType {
         REGULAR_CLASS,
         BOOKED,

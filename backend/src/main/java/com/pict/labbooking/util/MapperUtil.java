@@ -83,11 +83,14 @@ public class MapperUtil {
                 .division(booking.getDivision())
                 .createdAt(booking.getCreatedAt())
                 .updatedAt(booking.getUpdatedAt())
+<<<<<<< HEAD
                 // Override fields
                 .overriddenByEventId(booking.getOverriddenByEvent() != null
                         ? booking.getOverriddenByEvent().getId() : null)
                 .overriddenByEventTitle(booking.getOverriddenByEvent() != null
                         ? booking.getOverriddenByEvent().getTitle() : null)
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
                 .build();
     }
 
@@ -104,6 +107,7 @@ public class MapperUtil {
                 .division(slot.getDivision())
                 .facultyName(slot.getFacultyName())
                 .slotType(slot.getSlotType())
+<<<<<<< HEAD
                 // Override fields
                 .isOverridden(slot.getIsOverridden())
                 .overriddenByEventId(slot.getOverriddenByEvent() != null
@@ -140,6 +144,8 @@ public class MapperUtil {
                 .createdAt(event.getCreatedAt())
                 .bookingsOverridden(bookingsOverridden)
                 .slotsOverridden(slotsOverridden)
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
                 .build();
     }
 
@@ -147,4 +153,7 @@ public class MapperUtil {
         return bookings.stream().map(this::toBookingResponse).collect(Collectors.toList());
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
