@@ -13,7 +13,6 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
-<<<<<<< HEAD
 /**
  * Repository for BookingRequest.
  *
@@ -24,8 +23,6 @@ import java.util.Optional;
  * All custom queries here use :statusXxx parameters bound to enum values
  * from the service layer, OR use native Spring Data method naming.
  */
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 @Repository
 public interface BookingRequestRepository extends JpaRepository<BookingRequest, Long> {
 
@@ -35,25 +32,17 @@ public interface BookingRequestRepository extends JpaRepository<BookingRequest, 
 
     Optional<BookingRequest> findByReferenceNumber(String referenceNumber);
 
-<<<<<<< HEAD
     // ── Conflict check ───────────────────────────────────────────────────
     /**
      * Find bookings that conflict with the requested lab/date/time slot.
      * Passes enum values as parameters — the only Hibernate 6 compatible way.
      */
-=======
-    /** Check for conflicting bookings on same lab, date, and overlapping time */
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     @Query("""
         SELECT br FROM BookingRequest br
         JOIN br.labs l
         WHERE l = :lab
           AND br.bookingDate = :date
-<<<<<<< HEAD
           AND br.status IN :statuses
-=======
-          AND br.status IN ('APPROVED', 'IN_REVIEW', 'PENDING')
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
           AND br.startTime < :endTime
           AND br.endTime > :startTime
     """)
@@ -61,24 +50,16 @@ public interface BookingRequestRepository extends JpaRepository<BookingRequest, 
         @Param("lab") Lab lab,
         @Param("date") LocalDate date,
         @Param("startTime") LocalTime startTime,
-<<<<<<< HEAD
         @Param("endTime") LocalTime endTime,
         @Param("statuses") List<BookingStatus> statuses
     );
 
     // ── Schedule display ─────────────────────────────────────────────────
-=======
-        @Param("endTime") LocalTime endTime
-    );
-
-    /** Get all bookings for a specific lab on a date */
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     @Query("""
         SELECT br FROM BookingRequest br
         JOIN br.labs l
         WHERE l.id = :labId
           AND br.bookingDate = :date
-<<<<<<< HEAD
           AND br.status IN :statuses
     """)
     List<BookingRequest> findBookingsForLabOnDateWithStatuses(
@@ -125,19 +106,5 @@ public interface BookingRequestRepository extends JpaRepository<BookingRequest, 
     @Query("SELECT br.status, COUNT(br) FROM BookingRequest br GROUP BY br.status")
     List<Object[]> countGroupedByStatus();
 
-=======
-          AND br.status = 'APPROVED'
-    """)
-    List<BookingRequest> findApprovedBookingsForLabOnDate(
-        @Param("labId") Long labId,
-        @Param("date") LocalDate date
-    );
-
-    /** Analytics: count by status */
-    @Query("SELECT br.status, COUNT(br) FROM BookingRequest br GROUP BY br.status")
-    List<Object[]> countGroupedByStatus();
-
-    /** Recent bookings for dashboard */
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     List<BookingRequest> findTop10ByOrderByCreatedAtDesc();
 }

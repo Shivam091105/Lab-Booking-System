@@ -7,6 +7,7 @@ import java.util.Set;
 
 /** JWT login success response */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class JwtResponse {

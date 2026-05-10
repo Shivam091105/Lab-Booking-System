@@ -99,15 +99,11 @@
             <scope>provided</scope>
         </dependency>
 
-<<<<<<< HEAD
         <!-- Actuator — health check for Docker -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
         <!-- Spring Boot DevTools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

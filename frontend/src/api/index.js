@@ -53,7 +53,6 @@ export const bookingsAPI = {
   getStatusCounts:  ()   => api.get('/bookings/analytics/status-counts'),
 }
 
-<<<<<<< HEAD
 // ── Override Events ───────────────────────────────────────────────────────
 export const overrideAPI = {
   create:     data => api.post('/override-events', data),
@@ -63,6 +62,4 @@ export const overrideAPI = {
   deactivate: id   => api.patch(`/override-events/${id}/deactivate`),
 }
 
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 export default api

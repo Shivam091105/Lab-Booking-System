@@ -23,10 +23,11 @@ public interface ApprovalRepository extends JpaRepository<Approval, Long> {
     @Query("""
         SELECT a FROM Approval a
         WHERE a.bookingRequest.id = :bookingId
-          AND a.status = 'PENDING'
+          AND a.status = :status
         ORDER BY a.approvalOrder ASC
     """)
-    Optional<Approval> findNextPendingApproval(@Param("bookingId") Long bookingId);
+    Optional<Approval> findNextPendingApproval(@Param("bookingId") Long bookingId,
+                                               @Param("status") ApprovalStatus status);
 
     /** Count pending approvals by role (for dashboard badge) */
     long countByApproverRoleAndStatus(RoleName approverRole, ApprovalStatus status);

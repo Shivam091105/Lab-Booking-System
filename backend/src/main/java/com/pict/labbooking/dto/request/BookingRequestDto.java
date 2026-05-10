@@ -16,10 +16,6 @@ public class BookingRequestDto {
     private RequestType requestType;
 
     @NotNull(message = "Booking date is required")
-<<<<<<< HEAD
-=======
-    @Future(message = "Booking date must be in the future")
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     private LocalDate bookingDate;
 
     @NotNull(message = "Start time is required")

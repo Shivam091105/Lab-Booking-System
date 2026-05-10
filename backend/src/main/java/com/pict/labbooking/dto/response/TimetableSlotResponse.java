@@ -17,14 +17,8 @@ public class TimetableSlotResponse {
     private String division;
     private String facultyName;
     private SlotType slotType;
-<<<<<<< HEAD
-
     // ── Override fields (null when not overridden) ────────────────────────
     private Boolean isOverridden;
     private Long overriddenByEventId;
     private String overriddenByEventTitle;
 }
-
-=======
-}
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe

@@ -8,19 +8,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
-<<<<<<< HEAD
 import org.springframework.web.servlet.resource.NoResourceFoundException;
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-import org.springframework.web.servlet.resource.NoResourceFoundException;
-
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
 /**
  * Centralised exception handling for all controllers.
  * Returns consistent ApiResponse envelopes for every error type.
@@ -29,7 +21,6 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 @Slf4j
 public class GlobalExceptionHandler {
 
-<<<<<<< HEAD
     /** Suppress noisy 404 for missing static resources (e.g. health check misconfiguration) */
     @ExceptionHandler(NoResourceFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -39,8 +30,6 @@ public class GlobalExceptionHandler {
         return ApiResponse.error("Resource not found: " + ex.getResourcePath());
     }
 
-=======
->>>>>>> 280f57a752d05bcd2d25b47e63464b5860875fbe
     /** Validation errors — returns field-level messages */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
